@@ -7,6 +7,10 @@ function initializeSpeechRecognition() {
     recognition.interimResults = false;
     recognition.maxAlternatives = 1;
 
+    recognition.onstart = function() {
+        updateVoiceStatus(true); // Change to "Listening..." when recognition starts
+    };
+
     recognition.onresult = function(event) {
         const command = event.results[0][0].transcript.toLowerCase();
         processCommand(command);
@@ -18,12 +22,14 @@ function initializeSpeechRecognition() {
         } else {
             console.error('Speech recognition error:', event.error);
         }
+        updateVoiceStatus(false); // Reset to "Not listening" in case of error
     };
 
     recognition.onend = function() {
         if (!isProcessingCommand) {
-            recognition.start();
+            recognition.start(); // Auto-restart if not processing a command
         }
+        updateVoiceStatus(false); // Reset to "Not listening" after recognition ends
     };
 
     return recognition;
@@ -70,6 +76,9 @@ function processCommand(command) {
         case 'hi':
             speak('Hi! What can I do for you?');
             break;
+        case 'thank you':
+            speak('You are welcome!');
+            break;
         case 'reset to original mode':
             resetToOriginalMode();
             break;
@@ -81,6 +90,9 @@ function processCommand(command) {
             break;
         case 'go to upload':
             navigateTo('upload');
+            break;
+        case 'go to login':
+            navigateTo('login');
             break;
         default:
             speak('Sorry, I can\'t understand the command.');
@@ -114,7 +126,6 @@ function changeBackgroundColor(colorName) {
         'orange': '#ffa500',
         'pink': '#ffc0cb',
         'purple': '#800080',
-        // Add more colors or adjust as needed
     };
 
     const color = colorMap[colorName.toLowerCase()];
@@ -138,9 +149,10 @@ function resetToOriginalMode() {
 // Navigate to a specific section
 function navigateTo(section) {
     const sectionMap = {
-        'home': '/',
+        'home': '../pages/index.html',
         'about': '/about',
-        'upload': '/upload'
+        'upload': '/upload',
+        'login': '../pages/login.html'
     };
 
     const url = sectionMap[section.toLowerCase()];
@@ -159,7 +171,14 @@ function speak(text) {
     window.speechSynthesis.speak(speech);
 }
 
+// Update voice command status
+function updateVoiceStatus(isListening) {
+    const statusElement = document.getElementById('voice-status');
+    statusElement.innerHTML = `Voice command status: ${isListening ? 'Listening...' : 'Not listening'}`;
+}
+
 // Event listener for voice command button
 document.getElementById('voice-controls').querySelector('button').addEventListener('click', () => {
+    updateVoiceStatus(true); // Set status to "Listening" when the button is clicked
     recognition.start();
 });
