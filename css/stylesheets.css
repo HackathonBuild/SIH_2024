@@ -1,10 +1,6 @@
 /* Default Light Theme */
 body {
-<<<<<<< HEAD
     display:flex;
-=======
-    display: flex;
->>>>>>> a50fd9bfb0c2e006c96eff1245ee1d32ed169188
     flex-direction: column;
     min-height: 100vh;
     margin: 0;
@@ -165,11 +161,7 @@ header {
     padding: 30px 20px;
     text-align: center;
     position: relative;
-<<<<<<< HEAD
     flex:1;
-=======
-    flex: 1;
->>>>>>> a50fd9bfb0c2e006c96eff1245ee1d32ed169188
     animation: fadeIn 2s ease-out;
 }
 
@@ -210,12 +202,7 @@ footer {
     color: white;
     text-align: center;
     padding: 10px 0;
-<<<<<<< HEAD
     margin-top:5px;
-=======
-    margin-top: 10px;
-    position: sticky;
->>>>>>> a50fd9bfb0c2e006c96eff1245ee1d32ed169188
     animation: slideIn 1s ease-out;
     position: static;
 }
