@@ -1,6 +1,10 @@
 /* Default Light Theme */
 body {
+<<<<<<< HEAD
     display:flex;
+=======
+    display: flex;
+>>>>>>> a50fd9bfb0c2e006c96eff1245ee1d32ed169188
     flex-direction: column;
     min-height: 100vh;
     margin: 0;
@@ -112,9 +116,14 @@ header {
 /* Hero Section */
 .hero {
     background: rgba(0, 105, 92, 0.9);
+    background-image: url('assets/images/background.jpg'); /* Add your banner image path here */
+    background-size: cover; /* Ensures the banner covers the entire section */
+    background-position: center; /* Centers the image */
+
     color: white;
     text-align: center;
     padding: 50px 20px;
+
     position: relative;
     margin-top: 60px; /* Adjust for fixed header */
     animation: fadeIn 1.5s ease-out;
@@ -123,6 +132,7 @@ header {
 .hero-content {
     max-width: 800px;
     margin: 0 auto;
+
     animation: bounceIn 2s ease-out;
 }
 
@@ -137,6 +147,11 @@ header {
     background-size: cover;
     animation: flagAnimation 5s infinite;
 }
+.middle{
+    flex: 1; /* Takes the remaining space between header and footer */
+    padding: 20px;
+    background: #e0f7fa;
+}
 
 @keyframes flagAnimation {
     0% { transform: rotate(0deg); }
@@ -150,7 +165,11 @@ header {
     padding: 30px 20px;
     text-align: center;
     position: relative;
+<<<<<<< HEAD
     flex:1;
+=======
+    flex: 1;
+>>>>>>> a50fd9bfb0c2e006c96eff1245ee1d32ed169188
     animation: fadeIn 2s ease-out;
 }
 
@@ -191,7 +210,12 @@ footer {
     color: white;
     text-align: center;
     padding: 10px 0;
+<<<<<<< HEAD
     margin-top:5px;
+=======
+    margin-top: 10px;
+    position: sticky;
+>>>>>>> a50fd9bfb0c2e006c96eff1245ee1d32ed169188
     animation: slideIn 1s ease-out;
     position: static;
 }
