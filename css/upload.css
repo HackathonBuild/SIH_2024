@@ -1,0 +1,127 @@
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    font-family: Arial, sans-serif;
+    background:linear-gradient(to right,#7bf5e1, #ed8160);
+    margin: 0;
+    padding: 0;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    height: 100vh;
+
+}
+header {
+    background: #004d40;
+    color: white;
+    padding: 10px 0;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    animation: slideIn 1s ease-out;
+    text-align: center;
+}
+h1{
+    margin-left: 10px;
+}
+
+.big >div{
+    width: 500px;
+    height: auto;
+}
+.inputlabels{
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+
+}
+.inputlabels>div{
+    width: 200px;
+}
+form{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+}
+.name1{
+    display: flex;
+    flex-direction: row;
+    gap: 33vh;
+    flex-grow: 1;
+}
+.mobile1{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    gap: 20vh;
+    flex: 1;
+}
+.states1{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    gap: 20vh;
+    flex: 1;
+}
+.resum1{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    gap: 20vh;
+    flex: 1;
+}
+
+label {
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+
+input[type="text"],
+input[type="tel"],
+input[type="file"]
+input[type="select"] {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+    width: 100vh; /* Makes the inputs take full width of the container */
+    box-sizing: border-box;
+}
+select{
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+    width: 100vh; /* Makes the inputs take full width of the container */
+    box-sizing: border-box;
+}
+.button1{
+    justify-content: center;  
+    margin-top: 10px;
+    margin-right: 40px;
+}
+
+button {
+    padding: 10px;
+    background-color: #004d40;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
