@@ -151,7 +151,7 @@ function navigateTo(section) {
     const sectionMap = {
         'home': '../pages/index.html',
         'about': '/about',
-        'upload': '/upload',
+        'upload': '../pages/upload.html',
         'login': '../pages/login.html'
     };
 
