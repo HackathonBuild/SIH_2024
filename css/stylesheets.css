@@ -1,5 +1,8 @@
 /* Default Light Theme */
 body {
+    display:flex;
+    flex-direction: column;
+    min-height: 100vh;
     margin: 0;
     font-family: Arial, sans-serif;
     color: #333;
@@ -147,6 +150,7 @@ header {
     padding: 30px 20px;
     text-align: center;
     position: relative;
+    flex:1;
     animation: fadeIn 2s ease-out;
 }
 
@@ -187,7 +191,9 @@ footer {
     color: white;
     text-align: center;
     padding: 10px 0;
+    margin-top:5px;
     animation: slideIn 1s ease-out;
+    position: static;
 }
 
 /* Animations */
