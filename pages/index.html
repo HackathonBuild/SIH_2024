@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Swantantra</title>
+    <title>Swatantra</title>
     <link rel="stylesheet" href="../css/stylesheets.css">
 </head>
 <body>
@@ -12,38 +12,30 @@
             <h1>Swatantra</h1>
             <nav>
                 <a href="index.html">Home</a>
-                <a href="upload.html">Upload</a>
+                <a href="upload.html" id="upload-link">Upload</a>
                 <a href="#about">About</a>
                 <a href="login.html">Login</a>
             </nav>
         </div>
     </header>
-        <section id="home" class="hero">
-            <div class="hero-content">
-                <h2>Welcome to Swatantra</h2>
-                <p>We at Swatantra provide you with a web app that efficiently automates the process of segregating user application to the respective domain based on their skills mentioned in the resume and also giving them a score how suitable is their resume for the job role .</p>
-            </div>
-            <div>
-                <p>                                                     </p>
-            </div>
-            <div class="flag-animation"></div>
-        </section>
-        <section class="card-section">
-            <div class="card" id="card">
-                <p>
-
-                </p>
-              </div>
-              <div class="card2" id="card2">
-                <p>
-
-                </p>
-              </div>
-            
-        </section>
-
-
-
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h2>Welcome to Swatantra</h2>
+            <p>We at Swatantra provide you with a web app that efficiently automates the process of segregating user application to the respective domain based on their skills mentioned in the resume and also giving them a score how suitable is their resume for the job role.</p>
+        </div>
+        <div>
+            <p></p>
+        </div>
+        <div class="flag-animation"></div>
+    </section>
+    <section class="card-section">
+        <div class="card" id="card">
+            <p></p>
+        </div>
+        <div class="card2" id="card2">
+            <p></p>
+        </div>
+    </section>
     <footer>
         <p>&copy; 2024 Resume Matcher. All rights reserved.</p>
     </footer>
@@ -52,8 +44,24 @@
         <p id="voice-status">Voice command status: Not listening</p>
     </div>
 
-
-
+    <!-- Include your main JavaScript file -->
     <script src="../js/main.js"></script>
+
+    <!-- Add this script before the closing body tag -->
+    <script>
+        // Simulate login status; set to true if the user is logged in
+        var isLoggedIn = false;
+
+        document.addEventListener("DOMContentLoaded", function() {
+            var uploadLink = document.getElementById("upload-link");
+            uploadLink.addEventListener("click", function(event) {
+                if (!isLoggedIn) {
+                    event.preventDefault(); // Prevent the default link action
+                    alert("You need to log in to access the Upload page.");
+                    window.location.href = "login.html"; // Redirect to login page
+                }
+            });
+        });
+    </script>
 </body>
 </html>
