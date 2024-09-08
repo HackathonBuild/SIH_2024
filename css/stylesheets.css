@@ -1,21 +1,30 @@
-/* Default Light Theme */
 body {
-    display:flex;
+    display: flex;
     flex-direction: column;
     min-height: 100vh;
     margin: 0;
     font-family: Arial, sans-serif;
     color: #333;
-    background: linear-gradient(135deg, #87e1d2, #f46f46);
+    background: var(--bg-gradient);
     background-size: 400% 400%;
     animation: gradientShift 15s ease infinite; /* Smooth gradient shift */
     overflow-x: hidden;
     transition: background 1s ease, color 1s ease; /* Smooth transition for theme changes */
 }
+/* Default (Light Mode) */
+
+  
+  /* Dark Mode */
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg-gradient: linear-gradient(to right, #141E30, #243B55); /* Example dark gradient */
+    }
+  }
+  
 
 /* Light Theme Styles */
 .light-theme {
-    background: linear-gradient(135deg, #44f0d4, #f58765);
+    --bg-gradient:linear-gradient(135deg, #44f0d4, #f58765);
     color: #333;
 }
 
@@ -38,7 +47,7 @@ body {
 
 /* Dark Theme Styles */
 .dark-theme {
-    background: linear-gradient(135deg, #121212, #333333);
+    --bg-gradient: linear-gradient(to right, #141E30, #243B55);
     color: #e0e0e0;
 }
 
@@ -50,7 +59,7 @@ body {
     background: rgba(30, 30, 30, 0.9);
 }
 
-.dark-theme .upload-section,
+.dark-theme .card-section,
 .dark-theme .about-section {
     background: #333;
 }
@@ -58,6 +67,7 @@ body {
 .dark-theme footer {
     background: #1f1f1f;
 }
+
 
 /* Header */
 header {
@@ -108,13 +118,23 @@ header {
 .nav a:hover::after {
     width: 100%;
 }
+header:not(.dark-mode) #theme-image {
+    content: url('light-image.png');
+  }
+  
+header.dark-mode #theme-image {
+    content: url('dark-image.png');
+  }
 
 /* Hero Section */
 .hero {
-    background: rgba(0, 105, 92, 0.9);
-    background-image: url('assets/images/background.jpg'); /* Add your banner image path here */
+    display: flex;
+    flex-direction: column;
+    max-height: 40px;
+    background: rgba(0, 105, 92, 0.9); /* Add your banner image path here */
     background-size: cover; /* Ensures the banner covers the entire section */
     background-position: center; /* Centers the image */
+    
 
     color: white;
     text-align: center;
@@ -126,8 +146,10 @@ header {
 }
 
 .hero-content {
+    justify-content: center;
+    max-height: 100px;
     max-width: 800px;
-    margin: 0 auto;
+    margin: -25px auto;
 
     animation: bounceIn 2s ease-out;
 }
@@ -154,6 +176,71 @@ header {
     50% { transform: rotate(10deg); }
     100% { transform: rotate(0deg); }
 }
+.card-section{
+    display: flex;
+    flex-direction: column;
+    padding: 30px 20px;
+    overflow-y: visible;
+    text-align: center;
+    position: relative;
+    justify-content: left;
+    align-items: first baseline;
+    flex: 1;
+    animation: fadeIn 2s ease-out;
+    gap: 70px;
+}
+.card{
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 20px;
+    backdrop-filter: blur(1px);
+    background-color: rgba(255, 255, 255, 0.3);
+    box-shadow: 10px 14px 8px rgba(0, 0, 0, 0.1);
+    flex: 1;
+    min-height: 200px;
+    max-height: 100vh;
+    min-width: 100vh;
+
+
+    opacity: 0; /* Hidden initially */
+    transform: translateY(50px); /* Start slightly below */
+    transition: opacity 0.5s ease-out, transform 1.5s ease-out;
+    transition: transform 1.3s ease, box-shadow 0.3s ease;
+
+}
+.card:hover {
+    transform: translateY(-20px) scale(1.5); /* Move up and slightly scale */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Move it to its original position */
+  }
+.card.slide-up {
+    opacity: 1;              /* Make it visible */
+    transform: translateY(0); /* Move it to its original position */
+  }
+
+  .card2{
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 20px;
+    backdrop-filter: blur(1px);
+    background-color: rgba(255, 255, 255, 0.3);
+    box-shadow: 10px 14px 8px rgba(0, 0, 0, 0.1);
+    flex: 1;
+    min-height: 200px;
+    max-height: 100vh;
+    min-width: 100vh;
+
+
+    opacity: 0; /* Hidden initially */
+    transform: translateY(50px); /* Start slightly below */
+    transition: opacity 0.5s ease-out, transform 1.5s ease-out;
+    transition: transform 1.3s ease, box-shadow 0.3s ease;
+}
+.card2:hover {
+    transform: translateY(-20px) scale(1.5); /* Move up and slightly scale */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Move it to its original position */
+  }
+.card2.slide-up {
+    opacity: 1;              /* Make it visible */
+    transform: translateY(0); /* Move it to its original position */
+  }
 
 /* Upload Section and About Section */
 .upload-section,
@@ -161,7 +248,7 @@ header {
     padding: 30px 20px;
     text-align: center;
     position: relative;
-    flex:1;
+    flex: 1;
     animation: fadeIn 2s ease-out;
 }
 
@@ -191,6 +278,8 @@ header {
     transition: background 0.3s ease, transform 0.3s ease;
 }
 
+
+
 .upload-section button:hover {
     background: #00332e;
     transform: scale(1.1);
@@ -202,9 +291,9 @@ footer {
     color: white;
     text-align: center;
     padding: 10px 0;
-    margin-top:5px;
-    animation: slideIn 1s ease-out;
+    margin-top: 5px;
     position: static;
+    animation: slideIn 1s ease-out;
 }
 
 /* Animations */

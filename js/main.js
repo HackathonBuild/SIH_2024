@@ -182,3 +182,11 @@ document.getElementById('voice-controls').querySelector('button').addEventListen
     updateVoiceStatus(true); // Set status to "Listening" when the button is clicked
     recognition.start();
 });
+window.addEventListener('load', () => {
+    const glassyBox = document.getElementById('card');
+    glassyBox.classList.add('slide-up');
+  });
+  window.addEventListener('load', () => {
+    const glassyBox = document.getElementById('card2');
+    glassyBox.classList.add('slide-up');
+  });

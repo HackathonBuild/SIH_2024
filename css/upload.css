@@ -1,6 +1,6 @@
 body {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     min-height: 100vh;
     font-family: Arial, sans-serif;
     background:linear-gradient(to right,#7bf5e1, #ed8160);
@@ -27,6 +27,32 @@ header {
 h1{
     margin-left: 10px;
 }
+:root {
+    font-size: 20px;
+  }
+  
+  *,
+  *:before,
+  *:after {
+    box-sizing: border-box;
+  }
+  
+  p {
+    margin: 0;
+  }
+  
+  p:not(:last-child) {
+    margin-bottom: 1.5em;
+  }
+  
+  
+
+  
+  .card-footer {
+    font-size: 0.65em;
+    color: #446;
+  }
+  
 
 .big >div{
     width: 500px;
@@ -41,17 +67,34 @@ h1{
 .inputlabels>div{
     width: 200px;
 }
+.form-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    max-width: 100vhpx;
+    height: 300px;
+    padding: 35px;
+    margin-top: 100px;
+  
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 20px;
+    backdrop-filter: blur(1px);
+    background-color: rgba(255, 255, 255, 0.3);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    gap: 20px;
+}
 form{
     display: flex;
     flex-direction: column;
-    gap: 20px;
-
+    min-width: 100vh;
+    flex: 1;
+    gap: 10px;
 }
 .name1{
     display: flex;
     flex-direction: row;
-    gap: 33vh;
-    flex-grow: 1;
+    gap: 36vh;
+    flex: 1;
 }
 .mobile1{
     display: flex;
@@ -79,6 +122,19 @@ label {
     margin-bottom: 5px;
     font-weight: bold;
 }
+@media (prefers-reduced-motion: reduce) {
+    * {
+      animation: none !important;
+      transition-duration: 0.001s !important;
+    }
+  }
+  @keyframes background-move {
+    0% { background-position: 0 0, 0 0; }
+    100% { 
+      background-position: 100vw 0, 0 0;
+      background-position: unquote('max(100vw, 40em)')  0, 0 0;
+    }
+  }
 
 
 input[type="text"],
@@ -88,9 +144,27 @@ input[type="select"] {
     padding: 8px;
     border: 1px solid #ccc;
     border-radius: 5px;
+    border-color: black;
     font-size: 14px;
     width: 100vh; /* Makes the inputs take full width of the container */
     box-sizing: border-box;
+}
+input[type="file"] {
+    display:none;
+  }
+  
+  .custom-file-upload {
+    display: inline-block;
+    padding: 10px 20px;
+    color: #fff;
+    background-color: #004d40;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.custom-file-upload:hover {
+    background-color: #00695c;
 }
 select{
     padding: 8px;
@@ -101,8 +175,11 @@ select{
     box-sizing: border-box;
 }
 .button1{
-    justify-content: center;  
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     margin-top: 10px;
+    margin-left: 40px;
     margin-right: 40px;
 }
 
@@ -117,7 +194,7 @@ button {
 }
 
 button:hover {
-    background-color: #45a049;
+    background-color: #00695c;
 }
 
 .input-group {
