@@ -5,14 +5,13 @@
 }
 
 body {
-    
-	background: #007d3c;
+    background: linear-gradient(to right,  #7bf5e1, #ed8160);
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	flex-direction: column;
-    background-image: url(../assets/images/background.jpg);
-    background-size: contain; /* Scales the image to cover the entire area */
+	background-image: url(../assets/images/background.jpg);
+    background-size: auto; /* Scales the image to cover the entire area */
     background-position: center; /* Centers the image */
     background-repeat: no-repeat; /* Prevents the image from repeating */
     overflow: hidden;
