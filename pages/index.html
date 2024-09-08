@@ -3,65 +3,65 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Swatantra</title>
+    <title>Swantantra</title>
     <link rel="stylesheet" href="../css/stylesheets.css">
 </head>
 <body>
     <header>
         <div class="nav">
-            <h1>Swatantra</h1>
+            <h1 id="textanimate">Swantantra</h1>
             <nav>
                 <a href="index.html">Home</a>
-                <a href="upload.html" id="upload-link">Upload</a>
+                <a href="#upload">Upload</a>
                 <a href="#about">About</a>
                 <a href="login.html">Login</a>
             </nav>
         </div>
     </header>
-    <section id="home" class="hero">
-        <div class="hero-content">
-            <h2>Welcome to Swatantra</h2>
-            <p>We at Swatantra provide you with a web app that efficiently automates the process of segregating user application to the respective domain based on their skills mentioned in the resume and also giving them a score how suitable is their resume for the job role.</p>
-        </div>
-        <div>
-            <p></p>
-        </div>
-        <div class="flag-animation"></div>
-    </section>
-    <section class="card-section">
-        <div class="card" id="card">
-            <p></p>
-        </div>
-        <div class="card2" id="card2">
-            <p></p>
-        </div>
-    </section>
+        <section id="home" class="hero">
+            <div class="hero-content">
+                <h2>Welcome to Swantantra</h2>
+                <p>We at Swatantra provide you with a web app that efficientely automates the process of segregating user application to the respective domain based on their skills mentioned in their resume and also giving them a score depecting how suitable their resume is for the job role</p>
+            </div>
+            <div>
+                <p>                                                     </p>
+            </div>
+            <div class="flag-animation"></div>
+        </section>
+        <section class="card-section1">
+            <div class="card" id="card">
+                <img src="../assets/images/drdo-removebg-preview.png" alt="">
+            </div>
+            <p>
+                DRDO is the R&D wing of Ministry of Defence, Govt of India, with a vision to empower India with cutting-edge defence technologies and a mission to achieve self-reliance in critical defence technologies and systems, while equipping our armed forces with state-of-the-art weapon systems and equipment in accordance with requirements laid down by the three Services. 
+    
+            </p>
+        </section>
+        <section class="card-section2">
+                <div class="card2" id="card2">
+                    <img src="../assets/images/Defence_Ministry_India-removebg-preview.png" alt="">
+                </div>
+                    <p>
+                        The Government of India is responsible for ensuring the defence of India and every part thereof. The Supreme Command of the Armed Forces vests in the President. The responsibility for national defence rests with the Cabinet.This is discharged through the Ministry of Defence, which provides the policy framework and wherewithal to the Armed Forces to discharge their responsibilities in the context of the defence of the country.
+            
+                    </p>
+                  
+              </section>
+            
+
+
+
+
     <footer>
-        <p>&copy; Developed by Team Hack Surge development Team.</p>
+        <p>&copy; Developed by Team Hack Surge development team.</p>
     </footer>
     <div id="voice-controls">
         <button onclick="startListening()">Start Voice Command</button>
         <p id="voice-status">Voice command status: Not listening</p>
     </div>
 
-    <!-- Include your main JavaScript file -->
+
+
     <script src="../js/main.js"></script>
-
-    <!-- Add this script before the closing body tag -->
-    <script>
-        // Simulate login status; set to true if the user is logged in
-        var isLoggedIn = false;
-
-        document.addEventListener("DOMContentLoaded", function() {
-            var uploadLink = document.getElementById("upload-link");
-            uploadLink.addEventListener("click", function(event) {
-                if (!isLoggedIn) {
-                    event.preventDefault(); // Prevent the default link action
-                    alert("You need to log in to access the Upload page.");
-                    window.location.href = "login.html"; // Redirect to login page
-                }
-            });
-        });
-    </script>
 </body>
 </html>
