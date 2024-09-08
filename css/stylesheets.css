@@ -130,7 +130,7 @@ header.dark-mode #theme-image {
 .hero {
     display: flex;
     flex-direction: column;
-    max-height: 40px;
+    max-height: 100px;
     background: rgba(0, 105, 92, 0.9); /* Add your banner image path here */
     background-size: cover; /* Ensures the banner covers the entire section */
     background-position: center; /* Centers the image */
