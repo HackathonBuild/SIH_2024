@@ -10,4 +10,4 @@ Recruitment and Assessment Centre (RAC) under DRDO, Ministry of Defence conducts
 - [Problem statement](https://www.sih.gov.in/sih2024PS?technology_bucket=QWxs&category=QWxs&organization=TWluaXN0cnkgb2YgRGVmZW5jZQ==&organization_type=QWxs)(PS Number :- SIH1654)
 - Ministry of Defence
 - Theme :- Smart Automation
-
+- [ ] hackathon
