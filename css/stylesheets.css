@@ -1,0 +1,483 @@
+/* Default Light Theme */
+@import url('https://fonts.googleapis.com/css2?family=Sevillana&display=swap');
+:root {
+    --bg-gradient: linear-gradient(to right, #ff7e5f, #feb47b); /* Example light gradient */
+  }
+  .sevillana-regular {
+
+  }
+  
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    color: #000000;
+    font-weight: 400;
+    font-style: normal;
+    background: var(--bg-gradient);
+    background-size: 400% 400%;
+    animation: gradientShift 15s ease infinite; /* Smooth gradient shift */
+    overflow-x: hidden;
+    transition: background 1s ease, color 1s ease; /* Smooth transition for theme changes */
+}
+
+*, *::before, *::after {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+.content {
+    width: 95%;
+    max-width: 40ch;
+    padding: 3em 1em;
+}
+
+.marquee {
+    position: relative;
+    width: 100%;
+    height: 2em;
+    font-size: 5em;
+    display: grid;
+    place-items: center;
+    overflow: hidden;
+}
+
+.marquee_text {
+    position: absolute;
+    min-width: 100%;
+    white-space: nowrap;
+    animation: marquee 16s infinite linear;
+}
+
+@keyframes marquee {
+    from {
+        transform: translateX(70%);
+    }
+    to {
+        transform: translateX(-70%);
+    }
+}
+
+.marquee_blur {
+    position: absolute;
+    inset: 0;
+    display: grid;
+    place-items: center;
+    background-color: black;
+    background-image: 
+        linear-gradient(to right, white, 1rem, transparent 50%), 
+        linear-gradient(to left, white, 1rem, transparent 50%);
+    filter: contrast(15);
+}
+
+.marquee_blur p {
+    filter: blur(0.07em);
+}
+
+.marquee_clear {
+    position: absolute;
+    inset: 0;
+    display: grid;
+    place-items: center;
+}
+
+.text {
+    margin-block: 2em;
+}
+
+/* Default (Light Mode) */
+
+  
+  /* Dark Mode */
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg-gradient: linear-gradient(to right, #141E30, #243B55); /* Example dark gradient */
+    }
+  }
+  
+
+/* Light Theme Styles */
+.light-theme {
+    --bg-gradient:linear-gradient(135deg, #44f0d4, #f58765);
+    color: #333;
+}
+
+.light-theme header {
+    background: #004d40;
+}
+
+.light-theme .hero {
+    background: rgba(0, 105, 92, 0.9);
+}
+
+.light-theme .upload-section,
+.light-theme .about-section {
+    background: #e0f2f1;
+}
+
+.light-theme footer {
+    background: #004d40;
+}
+
+/* Dark Theme Styles */
+.dark-theme {
+    --bg-gradient: linear-gradient(to right, #141E30, #243B55);
+    color: #e0e0e0;
+}
+
+.dark-theme header {
+    background: #1f1f1f;
+}
+
+.dark-theme .hero {
+    background: rgba(30, 30, 30, 0.9);
+}
+
+.dark-theme .card-section1,
+.dark-theme .card-section2,
+.dark-theme .about-section {
+    background: #333;
+    color: white;
+}
+
+.dark-theme footer {
+    background: #1f1f1f;
+}
+
+
+/* Header */
+header {
+    background: #004d40;
+    color: white;
+    padding: 10px 0;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    animation: slideIn 1s ease-out;
+}
+h1{
+    font-family: Sevillana;
+    margin-left: -100px;
+}
+
+.nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.nav h1 {
+    margin: 0;
+}
+
+.nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 15px;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+.nav a::after {
+    content: '';
+    display: block;
+    height: 2px;
+    background: #ffffff;
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    width: 0;
+    transition: width 0.3s ease;
+}
+
+.nav a:hover::after {
+    width: 100%;
+}
+header:not(.dark-mode) #theme-image {
+    content: url('light-image.png');
+  }
+  
+header.dark-mode #theme-image {
+    content: url('dark-image.png');
+  }
+
+/* Hero Section */
+.hero {
+    display: flex;
+    flex-direction: column;
+    max-height: 130px;
+    background: rgba(0, 105, 92, 0.9); /* Add your banner image path here */
+    background-size: cover; /* Ensures the banner covers the entire section */
+    background-position: center; /* Centers the image */
+    
+
+    color: white;
+    text-align: center;
+    padding: 50px 20px;
+
+    position: relative;
+    margin-top: 60px; /* Adjust for fixed header */
+    animation: fadeIn 1.5s ease-out;
+}
+
+.hero-content {
+    justify-content: center;
+    max-height: 100px;
+    max-width: 800px;
+    margin: -25px auto;
+
+    animation: bounceIn 2s ease-out;
+}
+
+/* Flag Animation */
+.flag-animation {
+    position: absolute;
+    bottom: 10px;
+    right: 20px;
+    width: 100px;
+    height: 60px;
+    background: url('https://www.transparentpng.com/thumb/india-flag/india-flag-image-transparent-5.png') no-repeat center;
+    background-size: cover;
+    animation: flagAnimation 5s infinite;
+}
+.middle{
+    flex: 1; /* Takes the remaining space between header and footer */
+    padding: 20px;
+    background: #e0f7fa;
+}
+
+@keyframes flagAnimation {
+    0% { transform: rotate(0deg); }
+    50% { transform: rotate(10deg); }
+    100% { transform: rotate(0deg); }
+}
+img{
+    max-height: 200px;
+}
+.card-section1{
+    display: flex;
+    flex-direction: row;
+    padding: 30px 20px;
+    overflow-y: visible;
+    text-align: center;
+    position: relative;
+    justify-content: left;
+    align-items: center ;
+    margin-top: 5px;
+    flex: 1;
+    animation: fadeIn 0.5s ease-out;
+    gap: 70px;
+    color: #000000;
+    font-weight: 550;
+}
+.card-section2{
+    display: flex;
+    flex-direction: row-reverse;
+    padding: 30px 20px;
+    overflow-y: visible;
+    text-align: center;
+    position: relative;
+    justify-content: left;
+    align-items: center ;
+    flex: 1;
+    animation: fadeIn 0.5s ease-out;
+    gap: 70px;
+    color: #000000;
+    font-weight: 550;
+}
+
+.card{
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 20px;
+    backdrop-filter: blur(1px);
+    background-color: rgba(255, 255, 255, 0.3);
+    box-shadow: 10px 14px 8px rgba(0, 0, 0, 0.1);
+    flex: 1;
+    min-height: 200px;
+    max-height: 100vh;
+    min-width: 100vh;
+
+
+    opacity: 0; /* Hidden initially */
+    transform: translateY(50px); /* Start slightly below */
+    transition: opacity 0.5s ease-out, transform 1.5s ease-out;
+    transition: transform 1.3s ease, box-shadow 0.3s ease;
+
+}
+.card:hover {
+    transform: translateY(-20px) scale(1.5); /* Move up and slightly scale */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Move it to its original position */
+  }
+.card.slide-up {
+    opacity: 1;              /* Make it visible */
+    transform: translateY(0); /* Move it to its original position */
+  }
+
+  .card2{
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 20px;
+    backdrop-filter: blur(1px);
+    background-color: rgba(255, 255, 255, 0.3);
+    box-shadow: 10px 14px 8px rgba(0, 0, 0, 0.1);
+    flex: 1;
+    min-height: 200px;
+    max-height: 100vh;
+    min-width: 100vh;
+
+
+    opacity: 0; /* Hidden initially */
+    transform: translateY(50px); /* Start slightly below */
+    transition: opacity 0.5s ease-out, transform 1.5s ease-out;
+    transition: transform 1.3s ease, box-shadow 0.3s ease;
+}
+.card2:hover {
+    transform: translateY(-20px) scale(1.5); /* Move up and slightly scale */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Move it to its original position */
+  }
+.card2.slide-up {
+    opacity: 1;              /* Make it visible */
+    transform: translateY(0); /* Move it to its original position */
+  }
+
+/* Upload Section and About Section */
+.upload-section,
+.about-section {
+    padding: 30px 20px;
+    text-align: center;
+    position: relative;
+    flex: 1;
+    animation: fadeIn 2s ease-out;
+}
+
+.upload-section h2,
+.about-section h2 {
+    color: #004d40;
+    animation: slideUp 1.5s ease-out;
+}
+
+.upload-section form {
+    margin: 0 auto;
+    max-width: 600px;
+    animation: float 2s ease-in-out infinite;
+}
+
+.upload-section input[type="file"] {
+    display: block;
+    margin: 10px auto;
+}
+
+.upload-section button {
+    background: #004d40;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.3s ease;
+}
+
+
+
+.upload-section button:hover {
+    background: #00332e;
+    transform: scale(1.1);
+}
+
+/* Footer */
+footer {
+    background: #004d40;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    margin-top: 5px;
+    position: static;
+    animation: slideIn 1s ease-out;
+}
+
+/* Animations */
+@keyframes gradientShift {
+    0% { background: linear-gradient(135deg, #7bf5e1, #ed8160); }
+    25% { background: linear-gradient(135deg, #7bf5e1, #ed8160); }
+    50% { background: linear-gradient(135deg, #7bf5e1, #ed8160); }
+    75% { background: linear-gradient(135deg, #7bf5e1, #ed8160); }
+    100% { background: linear-gradient(135deg, #7bf5e1, #ed8160); }
+}
+
+@keyframes gradientShiftLight {
+    0% { background: linear-gradient(135deg, #004d40, #ff5722); }
+    25% { background: linear-gradient(135deg, #ff5722, #ff9800); }
+    50% { background: linear-gradient(135deg, #ff9800, #004d40); }
+    75% { background: linear-gradient(135deg, #004d40, #ff5722); }
+    100% { background: linear-gradient(135deg, #004d40, #ff5722); }
+}
+
+@keyframes gradientShiftDark {
+    0% { background: linear-gradient(135deg, #121212, #333333); }
+    25% { background: linear-gradient(135deg, #333333, #121212); }
+    50% { background: linear-gradient(135deg, #121212, #333333); }
+    75% { background: linear-gradient(135deg, #333333, #121212); }
+    100% { background: linear-gradient(135deg, #121212, #333333); }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes bounceIn {
+    0% { transform: scale(0.3); opacity: 0; }
+    50% { transform: scale(1.05); opacity: 1; }
+    100% { transform: scale(1); }
+}
+
+@keyframes slideIn {
+    from { transform: translateY(-100%); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes slideUp {
+    from { transform: translateY(30px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes float {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0); }
+}
+
+/* Voice Controls */
+#voice-controls {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #004d40;
+    color: white;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+#voice-controls button {
+    background: #ffffff;
+    color: #004d40;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background 0.3s ease;
+}
+
+#voice-controls button:hover {
+    background: #e0e0e0;
+}
+
+#voice-status {
+    margin-top: 10px;
+}

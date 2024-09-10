@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document Submission Form</title>
+    <link rel="stylesheet" href="../css/upload.css">
+</head>
+<body>
+    <header>
+        <h1>Document Submission Form</h1>
+    </header>
+        <div class="form-container">
+
+            <form id="submission-form" action="#" method="post" enctype="multipart/form-data">
+                <div class="name1">
+                    <label for="name">Name:</label>
+                    <div class="container">
+                        <input type="text" id="name" name="name" placeholder="Enter your name" required>
+                    </div>
+
+                </div>
+                <div class="mobile1">
+                    <label for="mobile">Mobile Number:</label>
+                    <input type="tel" id="mobile" name="mobile" placeholder="Enter your mobile number" pattern="[0-9]{10}" required>
+                </div>
+                <div class="states1">
+                    <label for="states">Select State/UT:</label>
+                    <select id="states" name="states">
+                        <option value="" disabled selected>Select your state</option>
+                        <!-- States -->
+                        <option value="Andhra Pradesh">Andhra Pradesh</option>
+                        <option value="Arunachal Pradesh">Arunachal Pradesh</option>
+                        <option value="Assam">Assam</option>
+                        <option value="Bihar">Bihar</option>
+                        <option value="Chhattisgarh">Chhattisgarh</option>
+                        <option value="Goa">Goa</option>
+                        <option value="Gujarat">Gujarat</option>
+                        <option value="Haryana">Haryana</option>
+                        <option value="Himachal Pradesh">Himachal Pradesh</option>
+                        <option value="Jharkhand">Jharkhand</option>
+                        <option value="Karnataka">Karnataka</option>
+                        <option value="Kerala">Kerala</option>
+                        <option value="Madhya Pradesh">Madhya Pradesh</option>
+                        <option value="Maharashtra">Maharashtra</option>
+                        <option value="Manipur">Manipur</option>
+                        <option value="Meghalaya">Meghalaya</option>
+                        <option value="Mizoram">Mizoram</option>
+                        <option value="Nagaland">Nagaland</option>
+                        <option value="Odisha">Odisha</option>
+                        <option value="Punjab">Punjab</option>
+                        <option value="Rajasthan">Rajasthan</option>
+                        <option value="Sikkim">Sikkim</option>
+                        <option value="Tamil Nadu">Tamil Nadu</option>
+                        <option value="Telangana">Telangana</option>
+                        <option value="Tripura">Tripura</option>
+                        <option value="Uttar Pradesh">Uttar Pradesh</option>
+                        <option value="Uttarakhand">Uttarakhand</option>
+                        <option value="West Bengal">West Bengal</option>
+                        
+                        <!-- Union Territories -->
+                        <option value="Andaman and Nicobar Islands">Andaman and Nicobar Islands</option>
+                        <option value="Chandigarh">Chandigarh</option>
+                        <option value="Dadra and Nagar Haveli and Daman and Diu">Dadra and Nagar Haveli and Daman and Diu</option>
+                        <option value="Lakshadweep">Lakshadweep</option>
+                        <option value="Delhi">Delhi</option>
+                        <option value="Puducherry">Puducherry</option>
+                        <option value="Ladakh">Ladakh</option>
+                        <option value="Jammu and Kashmir">Jammu and Kashmir</option>
+                    </select>
+                    
+                </div>
+                <div class="resum1">
+                    <label for="file-input">Upload Resume</label>
+                    <label class="custom-file-upload">
+                        <input type="file" id="file-input" onchange="displayFileName()" />
+                        Upload
+                    </label>
+                    <span id="file-name" class="file-name">No file chosen</span>
+                </div>
+                    
+ 
+            </form>
+            <div class="button1">
+                <button type="submit">Submit</button>
+            </div>
+
+
+    </div>
+
+    
+
+    
+</body>
+<script>
+    function displayFileName() {
+        const input = document.getElementById('file-input');
+        const fileNameDisplay = document.getElementById('file-name');
+
+        // Check if a file is selected
+        if (input.files.length > 0) {
+            fileNameDisplay.textContent = input.files[0].name; // Display the selected file's name
+        } else {
+            fileNameDisplay.textContent = 'No file chosen'; // Display default text if no file is chosen
+        }
+    }
+</script>
+</html>
